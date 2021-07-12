@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey_flutter/modals/task_data.dart';
@@ -84,10 +83,3 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
-
-// (newTaskTitle) {
-// // setState(() {
-// //   tasks.add(Task(title: newTaskTitle));
-// // });
-// Navigator.pop(context);
-// }
