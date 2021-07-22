@@ -50,6 +50,11 @@ class TaskData extends ChangeNotifier {
     notifyListeners();
   }
 
+  void modifyTask(int index, String newTitle) {
+    _tasks[index].title = newTitle;
+    notifyListeners();
+  }
+
   void deleteTask(int index) async {
     _tasks.remove(tasks[index]);
     SharedPreferences pref = await SharedPreferences.getInstance();

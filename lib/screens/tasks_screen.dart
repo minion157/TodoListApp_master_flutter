@@ -17,15 +17,6 @@ class TasksScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  child: Icon(
-                    Icons.list,
-                    size: 30.0,
-                    color: Color(0xFF0B2239),
-                  ),
-                  backgroundColor: Colors.white,
-                  radius: 30.0,
-                ),
                 SizedBox(
                   height: 10,
                 ),

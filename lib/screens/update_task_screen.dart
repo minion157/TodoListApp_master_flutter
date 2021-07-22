@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:todoey_flutter/modals/task_data.dart';
 import 'package:todoey_flutter/wigets/rounded_button.dart';
 
-class AddTaskScreen extends StatelessWidget {
+class UpdateTaskScreen extends StatelessWidget {
+  final int index;
+  UpdateTaskScreen({required this.index});
   static String newTaskTitle = '';
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class AddTaskScreen extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    'Add Task',
+                    'Update Task',
                     style: TextStyle(
                       fontSize: 40,
                       color: Color(0xFF0B2239),
@@ -44,13 +46,15 @@ class AddTaskScreen extends StatelessWidget {
                   height: 10,
                 ),
                 RoundedButton(
-                    title: 'Add',
+                    title: 'UPDATE',
                     color: Color(0xFF0B2239),
                     onPressed: () {
                       if (newTaskTitle != '') {
                         Provider.of<TaskData>(context, listen: false)
-                            .addTask(newTaskTitle);
+                            .modifyTask(index, newTaskTitle);
                         newTaskTitle = '';
+                        Navigator.pop(context);
+                      } else {
                         Navigator.pop(context);
                       }
                     }),
