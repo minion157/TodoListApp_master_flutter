@@ -50,8 +50,11 @@ class TaskData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void modifyTask(int index, String newTitle) {
+  void modifyTask(int index, String newTitle) async {
     _tasks[index].title = newTitle;
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    final saveData = encode(tasks);
+    pref.setString('saveData', saveData);
     notifyListeners();
   }
 

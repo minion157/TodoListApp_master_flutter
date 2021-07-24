@@ -25,19 +25,20 @@ class UpdateTaskScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Column(
               children: [
-                Flexible(
-                  child: Text(
-                    'Update Task',
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Color(0xFF0B2239),
-                    ),
+                Text(
+                  'Update Task',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Color(0xFF0B2239),
                   ),
                 ),
                 TextField(
                   autofocus: true,
                   textAlign: TextAlign.center,
-                  decoration: InputDecoration(),
+                  decoration: InputDecoration(
+                      hintStyle: TextStyle(color: Colors.grey),
+                      hintText:
+                          Provider.of<TaskData>(context).tasks[index].title),
                   onChanged: (value) {
                     newTaskTitle = value;
                   },
